@@ -1,7 +1,14 @@
 // Hello ! 
-// first step: show the map.
+// first step: show the map;
+// second step: deal with the data;
 
 PImage mapImage;
+
+PopulationTable popData;
+float dataMin, dataMax; 
+
+String[] sites;
+
 
 void setup() {
   
@@ -12,6 +19,12 @@ void setup() {
   size(1180, 600);
   mapImage = loadImage("Vastopolis_Map.png");
   
+  
+  popData = new PopulationTable("Population.csv");
+  popData.showData();
+  popData.getMaxPopulation();
+  
+  // sites = String(popData.getRowNames()); 
 }
 
 void draw() {
