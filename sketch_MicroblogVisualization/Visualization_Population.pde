@@ -1,4 +1,4 @@
-PImage iMap;
+
 PopulationTable dPopulation;
 float maxPop, maxPopRadius;
 
@@ -19,7 +19,7 @@ class Visualization_Population {
   }
   
   void draw(){
-    image(iMap, 0, 0, width, height);
+    // image(iMap, 0, 0, width, height);
     
     ellipseMode(RADIUS);
   
