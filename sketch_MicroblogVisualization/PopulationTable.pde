@@ -256,7 +256,7 @@ class PopulationTable{
       maxPop = temp;
     }
    
-   println("the Max population is: " + maxPop);
+   // println("the Max population is: " + maxPop);
    return maxPop;
   
  }
