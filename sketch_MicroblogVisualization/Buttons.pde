@@ -15,7 +15,7 @@ class Buttons{
   }
   
   void draw() {
-    
+    noStroke();
     
     fill(0 == vFlag ? cChosen : cUnchosen);
     ellipse(iBX - 30, iBY, iBR, iBR);

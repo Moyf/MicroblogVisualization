@@ -60,16 +60,30 @@ void mousePressed() {
 void keyPressed() {
   if (key == '[') {
     vFlag--;
-    if (vFlag < 0) {
-      vFlag = flagCount - 1;
-    }
+    if (vFlag < 0) vFlag = flagCount - 1;
   } else if (key == ']') {
     vFlag++;
-    if (vFlag == flagCount) {
-      vFlag = 0;
-    }
+    if (vFlag == flagCount) vFlag = 0;
+    
   }
+
+
+  if (key == CODED) { 
+    if (keyCode == LEFT) { 
+      vFlag--;
+      if (vFlag < 0) vFlag = flagCount - 1;
+      
+    } else if (keyCode == RIGHT) { 
+        vFlag++;
+        if (vFlag == flagCount) vFlag = 0;
+    } 
+  } 
+
+
+
 }
+
+
 
 
 

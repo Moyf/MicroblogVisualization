@@ -256,9 +256,47 @@ class PopulationTable{
       maxPop = temp;
     }
    
-   // println("the Max population is: " + maxPop);
-   return maxPop;
+    // println("the Max population is: " + maxPop);
+    return maxPop;
   
- }
- 
+  }
+
+  int getSumPopulation(){
+    int sumPop = 0;
+
+    for (int i = 0; i < rowCount; i++){
+      sumPop += data[i][0];
+    }
+    
+    return sumPop;
+  }
+
+  int getMaxDaytimePopulation(){
+      int maxPop = 0;
+      int temp = 0;
+   
+    for (int i = 0; i < rowCount; i++){
+       
+      if (temp < data[i][1]){
+        temp = data[i][1];
+      }
+      
+      maxPop = temp;
+    }
+   
+    // println("the Max population is: " + maxPop);
+    return maxPop;
+  
+  }
+
+  int getSumDaytimePopulation(){
+    int sumDayPop = 0;
+
+    for (int i = 0; i < rowCount; i++){
+      sumDayPop += data[i][1];
+    }
+  
+    return sumDayPop;
+  }
+
 }
