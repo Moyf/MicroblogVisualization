@@ -1,6 +1,7 @@
 
 PopulationTable dPopulation;
 float maxPop, maxPopRadius;
+float sumPop, sumPopRadius;
 
 float plotX1, plotY1;
 float plotX2, plotY2;
@@ -33,12 +34,15 @@ class Visualization_Population {
     image(iMap, 0, 0, width, height);
     
     maxPop = dPopulation.getMaxPopulation();
-    maxPopRadius = 40 / maxPop;
+    maxPopRadius = 400 / maxPop;
+    
+    sumPop = dPopulation.getSumPopulation();
+    sumPopRadius = 1220 / sumPop ;
     
     pDataMin = 0;
     // get the intdata
-    pDataMax = ceil(dPopulation.getMaxPopulation() / popInterval) * popInterval;
-    pDayDataMax = ceil(dPopulation.getMaxDaytimePopulation() / popInterval) * popInterval;
+    pDataMax = dPopulation.getMaxPopulation(); //ceil(dPopulation.getMaxPopulation() / popInterval) * popInterval;
+    pDayDataMax = dPopulation.getMaxDaytimePopulation(); //ceil(dPopulation.getMaxDaytimePopulation() / popInterval) * popInterval;
     
 
     plotFont = createFont("SansSerif", 20);
@@ -49,38 +53,30 @@ class Visualization_Population {
   }
   
   void draw(){
-    // image(iMap, 0, 0, width, height);
+    if(pFlag == 0) drawChart1();
+    else 
+    if (pFlag == 1){
+      drawChart2();
+    }
+  }
+
+  void drawChart1() {
+    drawPopulationCookie();
     
-    ellipseMode(RADIUS);
-    
+  }
+
+  void drawChart2() {
+
     fill(200, 200, 200, 210);
     rectMode(CORNERS);
     rect(plotX1, plotY1, plotX2, plotY2);
 
     drawAxisLabels();
+    drawTitle();
+
     drawZoneLabels();
     drawPopulationLabels();
     drawDataArea();
-    drawTitle();
-  }
-
-  void drawChart1() {
-
-    drawAxisLabels();
-    drawZoneLabels();
-    drawPopulationLabels();
-    drawDataArea();
-    drawTitle();
-
-  }
-
-  void drawChart2() {
-
-    drawAxisLabels();
-    drawZoneLabels();
-    drawPopulationLabels();
-    drawDataArea();
-    drawTitle();
     
   }
 
@@ -93,15 +89,46 @@ class Visualization_Population {
     text(title, (plotX1 + plotX2)/2, plotY1 - 10);
   }
 
-  color baseColor = color(251, 168, 70);
-  color upperColor = color(244, 106, 5);
+  color baseColor = color(102, 175, 106);
+  color upperColor = color(246, 145, 29);
 
+
+// ========================================================
+// 饼图
+// ========================================================
   void drawPopulationCookie(){
+    
+    float tempEnd = -HALF_PI;  
 
-    fill(200, 200, 200, 210);
-    ellipse(width/2, height/2, maxPop * maxPopRadius, maxPop * maxPopRadius);
+    fill(baseColor);
+    ellipseMode(CENTER);
+    // ellipse(width/2, height/2, 300, 300);
+    
 
+    for (int row = 0; row < dPopulation.rowCount; row++) {
+      if (dPopulation.isValid(row, 0)) {
+        
+        float percent = dPopulation.getFloat(row, 0)/sumPop;
+        println("tempEnd now is: " + tempEnd/PI);
+
+        
+        fill(100, 100 + 5 * row, 55);
+        // stroke(100);
+        arc(width/2, height/2, 300, 300, tempEnd, tempEnd + percent * TWO_PI, PIE);
+        tempEnd += percent * TWO_PI;
+        // text(dPopulation.getFloat(row, 0), mouseX, mouseY);
+//        fill(255, 20, 20);
+//        arc(width/2, height/2, 300, 300, -HALF_PI, PI/100, PIE);
+    
+
+      }
+    }
   }
+
+
+// ========================================================
+// 柱状图
+// ========================================================
 
   void drawAxisLabels() {
     fill(0);
@@ -198,36 +225,48 @@ class Visualization_Population {
         float y = map(value, pDataMin, pDataMax, plotY2, plotY1+70);
         tempRow = row;
         
-        fill(200);
+        fill(baseColor);
         noStroke();
         rectMode(CORNERS);
-        rect(x, plotY2, x+20, y);
+        rect(x-12, plotY2, x+32, y);
         
+        textAlign(CENTER, BOTTOM);
+        textSize(15);
+        text(parseInt(value), x+10, y);
         
         if(mouseX > x-2 && mouseX < x+22){
-          //if(mouseY > plotY2+2 && mouseY < y-2){
+          if(mouseY < plotY2+2 && mouseY > y-2){
             drawDayDataArea(x, tempRow);
             println("Hit!");
-          //}
+            println("x: "+ x + ", y=" + y + ", plotY2=" + plotY2);
+            println("pDataMin: "+ pDataMin + ", pDataMax=" + pDataMax);
+          }
         }
       }
     }
-    // Draw the lower-right and lower-left corners
-    
   }
   
   void drawDayDataArea(float x, int tempRow) {
     float value = dPopulation.getFloat(tempRow, 1);
-    float tempY = map(value, pDataMin, pDayDataMax, plotY2, plotY1+70);
+    float tempY = map(value, pDataMin, pDataMax, plotY2, plotY1+70);
+    int tempValue = parseInt(value);
     
-    fill(200, 50, 80);
-    rect(x, plotY2, x+20, tempY);
-    textAlign(LEFT, BOTTOM);
-    text(dPopulation.getFloat(tempRow, 1), x, tempY);
+    fill(upperColor);
+    rect(x-12, plotY2, x+32, tempY);
+    textAlign(CENTER, BOTTOM);
+    textSize(15);
+    text(tempValue, x+10, tempY);
     
     // Draw the lower-right and lower-left corners
     
   }
+  
+  void drawDayDataArea_Solo(float x, int tempRow) {
+      // Draw the lower-right and lower-left corners
+      
+  }
+  
+
 
 
 }

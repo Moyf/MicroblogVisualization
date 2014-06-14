@@ -79,7 +79,18 @@ void keyPressed() {
     } 
   } 
 
-
+  if (vFlag == 0){
+    if (key == CODED) { 
+      if (keyCode == UP) { 
+        pFlag--;
+        if (pFlag < 0) pFlag = flagCount - 1;
+        
+      } else if (keyCode == DOWN) { 
+          pFlag++;
+          if (pFlag == flagCount) pFlag = 0;
+      } 
+    } 
+  }
 
 }
 
