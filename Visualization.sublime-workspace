@@ -4,12 +4,36 @@
 		"selected_items":
 		[
 			[
-				"drawCh",
-				"drawChart1"
+				"tex",
+				"textSize"
+			],
+			[
+				"core",
+				"coreX"
+			],
+			[
+				"pF",
+				"pFlagCount"
+			],
+			[
+				"zone",
+				"zoneNames"
+			],
+			[
+				"sort",
+				"sortTheData"
 			],
 			[
 				"text",
-				"text"
+				"textAlign"
+			],
+			[
+				"dPo",
+				"dPopRowCount"
+			],
+			[
+				"drawCh",
+				"drawChart1"
 			],
 			[
 				"pop",
@@ -132,14 +156,6 @@
 	"buffers":
 	[
 		{
-			"file": "sketch_MicroblogVisualization/Visualization_Population.pde",
-			"settings":
-			{
-				"buffer_size": 7330,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "sketch_MicroblogVisualization/PopulationTable.pde",
 			"settings":
 			{
@@ -148,10 +164,10 @@
 			}
 		},
 		{
-			"file": "/F/编程/程序文件/Processing/sketch_14_03_08_Alien_3_Analyze/sketch_14_03_08_Alien_3_Analyze.pde",
+			"file": "sketch_MicroblogVisualization/sketch_MicroblogVisualization.pde",
 			"settings":
 			{
-				"buffer_size": 11581,
+				"buffer_size": 1787,
 				"line_ending": "Unix"
 			}
 		},
@@ -204,13 +220,15 @@
 	},
 	"file_history":
 	[
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization/Visualization_Population.pde",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/胡磊 - 关键代码.txt",
+		"/F/编程/程序文件/Processing/sketch_14_03_08_Alien_3_Analyze/sketch_14_03_08_Alien_3_Analyze.pde",
 		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/PopulationTable.pde",
 		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization.pde",
 		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/Visualization_Population.pde",
 		"/F/编程/程序文件/Processing/sketch_14_03_27_learnTable/FloatTable（带中文注释）.java",
 		"/F/processing-2.1/modes/java/examples/Books/Visualizing Data/ch04-milkteacoffee/figure_03_labels/figure_03_labels.pde",
 		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/Default/Preferences.sublime-settings",
-		"/F/编程/程序文件/Processing/sketch_14_03_08_Alien_3_Analyze/sketch_14_03_08_Alien_3_Analyze.pde",
 		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/User/Plain text.sublime-settings",
 		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/User/Java.sublime-settings",
 		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Pristine Packages/Java.sublime-package",
@@ -329,9 +347,7 @@
 		"/F/编程/程序文件/JS/2_event.html",
 		"/F/编程/程序文件/Sublime Text/HTML/10_04 GBin - 超漂亮的前端网站.html",
 		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/sublime_text_cracked.exe",
-		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/sublime_text - Copy.exe",
-		"/E/Desktop_Others/NCRE2/MY FILE/Write.cpp",
-		"/F/编程/程序文件/Sublime Text/HTML/09_27_0.html"
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/sublime_text - Copy.exe"
 	],
 	"find":
 	{
@@ -350,6 +366,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"coreX",
+			"coreX2",
+			"coreX",
+			"tempData",
+			"Angle",
+			"sumPop",
+			"fill",
+			"a",
 			"drawAxisLabels",
 			"drawDataPoints",
 			"syntax",
@@ -401,11 +425,12 @@
 			"savinga"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"b",
 			"infoBG",
 			"i",
 			"dieImage",
@@ -427,35 +452,6 @@
 			[
 				{
 					"buffer": 0,
-					"file": "sketch_MicroblogVisualization/Visualization_Population.pde",
-					"settings":
-					{
-						"buffer_size": 7330,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "sketch_MicroblogVisualization/PopulationTable.pde",
 					"settings":
 					{
@@ -466,13 +462,42 @@
 						"selection":
 						[
 							[
-								89,
-								89
+								6243,
+								6266
 							]
 						],
 						"settings":
 						{
 							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6658.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sketch_MicroblogVisualization/sketch_MicroblogVisualization.pde",
+					"settings":
+					{
+						"buffer_size": 1787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								213,
+								213
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
 							"syntax": "Packages/Java/Java.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -491,35 +516,6 @@
 			[
 				{
 					"buffer": 2,
-					"file": "/F/编程/程序文件/Processing/sketch_14_03_08_Alien_3_Analyze/sketch_14_03_08_Alien_3_Analyze.pde",
-					"settings":
-					{
-						"buffer_size": 11581,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								334,
-								334
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Java/Java.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "/F/processing-2.1/modes/java/examples/Books/Visualizing Data/ch04-milkteacoffee/step_16_tabs_images/step_16_tabs_images.pde",
 					"settings":
 					{
@@ -530,8 +526,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								394,
+								394
 							]
 						],
 						"settings":
@@ -578,7 +574,7 @@
 		"cols":
 		[
 			0.0,
-			0.526019063551,
+			0.5,
 			1.0
 		],
 		"rows":

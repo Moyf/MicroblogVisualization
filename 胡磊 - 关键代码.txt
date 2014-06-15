@@ -1,0 +1,180 @@
+关键代码：
+
+//====================================================================
+饼状图:
+//====================================================================
+
+
+1. 根据数据所占比例画出饼状图
+
+void drawPopulationCookie(){
+
+    float tempEnd = -HALF_PI;
+    float[] endAngle = new float[dPopRowCount+1];
+    float[] percent = new float[dPopRowCount];
+    endAngle[0] = -HALF_PI;
+
+    color[] pieColor = new color[dPopRowCount];
+    for (int i = 0; i < dPopRowCount; i++) {
+      pieColor[i] = color(200 + (i%4)*10, 150-(i%5)*3, 120);
+    
+    }
+
+    for (int row = 0; row < dPopRowCount; row++) {
+      percent[row] = tempData[row][0]/sumPop;
+      endAngle[row+1] = endAngle[row] + percent[row]*TWO_PI;
+      println("angle["+row+"] = " + endAngle[row]/PI);
+
+      ellipseMode(RADIUS);
+      fill(pieColor[row]);
+      arc(coreX, coreY, coreR, coreRR, endAngle[row], endAngle[row+1], PIE);
+      
+    }
+    
+    
+  }
+
+
+
+2. 如果鼠标在饼图里面,显示数据
+
+for (int i = 0; i < dPopRowCount; i++) {
+      if (mouseIsInArc(i, endAngle)) {
+        
+        fill(pieColor[i]);
+        arc(coreX, coreY, coreR+30, coreRR+30, endAngle[i], endAngle[i+1], PIE);
+        
+        fill(222, 50, 80);
+        textSize(13);
+        textAlign(LEFT, BOTTOM);
+        text("Zone Name: "+dPopulation.zoneNames[i]+"\n Density" + (int)dPopulation.getFloat(i, 0), mouseX, mouseY);
+      }
+  }
+
+
+3. 检测鼠标位置是否在扇形内
+
+  private boolean mouseIsInArc(int i, float[] endAngle){
+    mousePos = new PVector(mouseX, mouseY);
+    PVector corePos = new PVector(coreX, coreY);
+    PVector beginPoint = new PVector(0, coreR);
+    PVector tempV;
+    tempV = new PVector(mouseX-coreX, mouseY-coreY);
+    
+    float deltaAngle;
+    
+    if (dist(mousePos.x, mousePos.y, corePos.x, corePos.y) <= coreR){
+      
+      if (mouseX > coreX){
+        deltaAngle = PI - PVector.angleBetween(tempV, beginPoint);
+        println("angle = " + deltaAngle/PI);
+        
+      } else {
+        deltaAngle = PI + PVector.angleBetween(tempV, beginPoint);
+        println("angle = " + deltaAngle/PI);
+      }
+      
+      if (deltaAngle > endAngle[i]+HALF_PI && deltaAngle < endAngle[i+1]+HALF_PI){
+        //println("angle: " + PVector.angleBetween(tempV, beginPoint)/PI);
+        
+        return true;
+
+      } else return false;
+    } else return false;
+  }
+
+
+
+
+//====================================================================
+柱状图:
+//====================================================================
+
+
+
+1. 排序
+
+  // 排序算法 - 从大到小
+  public int[][] sort_reverse(int[][] a)  {
+    int temp = 0;
+    int[][] b = new int[dPopRowCount][dPopColumnCount];
+    b = a;
+
+    String[] myZoneNames = new String[dPopRowCount];
+    myZoneNames = dPopulation.zoneNames;
+    String tempString = " ";
+    
+    for(int i = dPopRowCount-1; i>0; --i) {
+      for(int j = 0; j < i; ++j) {
+        if(b[j+1][0] > b[j][0]) {
+          temp      = b[j][0];
+          b[j][0]   = b[j+1][0];
+          b[j+1][0] = temp;
+          
+          tempString      = myZoneNames[j];
+          myZoneNames[j]   = myZoneNames[j+1];
+          myZoneNames[j+1] = tempString;
+          
+        }
+      }
+    }
+    
+    return b;
+  }
+
+2. 画柱子(座标轴等代码省略)
+
+  // 绘制数据
+  void drawDataArea() {
+    float x = 70;
+    int tempRow;
+    smooth();
+
+    int[][] sortedData = new int[dPopRowCount][dPopColumnCount];
+    sortedData = sort_reverse(dPopulation.data);
+    
+    for (int row = 0; row < dPopRowCount; row++) {
+      if (dPopulation.isValid(row, 0)) {
+
+
+        // float value = dPopulation.getFloat(row, 0);
+        float value = sortedData[row][0];
+        x += 70;
+        float y = map(value, pDataMin, pDataMax, plotY2, plotY1+70);
+        tempRow = row;
+        
+        fill(baseColor);
+        noStroke();
+        rectMode(CORNERS);
+        rect(x-12, plotY2, x+32, y);
+        
+        textAlign(CENTER, BOTTOM);
+        textSize(12);
+        text(parseInt(value), x+10, y);
+        
+        if(mouseX > x-12 && mouseX < x+32){
+          if(mouseY < plotY2+2 && mouseY > y-2){
+            drawDayDataArea(x, tempRow);
+          }
+        }
+        
+      }
+    } 
+  }
+  
+  // 绘制白天的数据（基于总数据的绘制基础上）
+  void drawDayDataArea(float x, int tempRow) {
+    int[][] sortedData2 = sort_reverse2(dPopulation.data);
+
+    float value = sortedData2[tempRow][1];
+    float tempY = map(value, pDataMin, pDataMax, plotY2, plotY1+70);
+    
+    fill(upperColor);
+    rect(x-12, plotY2, x+32, tempY);
+    textAlign(CENTER, BOTTOM);
+    textSize(12);
+    fill(240);
+    text((int)value, x+10, tempY+20);
+    
+    
+  }

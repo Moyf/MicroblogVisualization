@@ -3,10 +3,14 @@
 // second step: deal with the data;
 PImage iMap;
 int vFlag, flagCount;
+int pFlag;
+int pFlagCount;
 
 Visualization_Population vPopulation;
 Visualization_Microblog vMicroblog;
+Visualization_Textflow vTextflow;
 Buttons btns;
+SubButtons sBtns;
 
 void setup() {
   
@@ -18,14 +22,19 @@ void setup() {
   
   vPopulation = new Visualization_Population();
   vMicroblog = new Visualization_Microblog();
+  vTextflow = new Visualization_Textflow();
   vFlag = 0;
+  pFlag = 0;
   flagCount = 3;
+  pFlagCount = 2;
   btns = new Buttons();
+  sBtns = new SubButtons();
   
+
 }
 
 void draw() {
-  background(255);
+  background(250);
   
   switch(vFlag){
     case 0:
@@ -35,6 +44,7 @@ void draw() {
       vMicroblog.draw();
       break;
     case 2:
+      vTextflow.draw();
       break;
     default:
       break;
@@ -83,11 +93,11 @@ void keyPressed() {
     if (key == CODED) { 
       if (keyCode == UP) { 
         pFlag--;
-        if (pFlag < 0) pFlag = flagCount - 1;
+        if (pFlag < 0) pFlag = pFlagCount - 1;
         
       } else if (keyCode == DOWN) { 
           pFlag++;
-          if (pFlag == flagCount) pFlag = 0;
+          if (pFlag == pFlagCount) pFlag = 0;
       } 
     } 
   }

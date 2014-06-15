@@ -8,32 +8,45 @@
 
 
 PopulationTable dPopulation;
-float maxPop, maxPopRadius;
-float sumPop, sumPopRadius;
 int dPopRowCount, dPopColumnCount;
+float maxPop;
+float sumPop;
+float sumDayPop;
 
+
+// the Pie Chart
+int coreX, coreY, coreR, coreRR;
+int coreX2, coreY2, coreR2;
+int[][] tempData;
+int[][] tempData2;
+
+// the Column Chart
 float plotX1, plotY1;
 float plotX2, plotY2;
 float labelX, labelY;
-
+color baseColor = color(102, 175, 106);
+color upperColor = color(246, 145, 29);
 int popInterval = 50000;
 int popIntervalMinor = 10000;
 float pDataMin, pDataMax, pDayDataMax;
 
 PFont plotFont; 
 
-int pFlag;
 color fontColor;
+color pieColor[];
+
+PVector mousePos;
 
 class Visualization_Population {
   
   Visualization_Population() {
-    iMap = loadImage("Vastopolis_Map.png");
     
     dPopulation = new PopulationTable("Population.csv");
     dPopRowCount = dPopulation.rowCount;
     dPopColumnCount = dPopulation.columnCount;
+
     
+    // Column Chart
     plotX1 = 80; 
     plotX2 = width - plotX1;
     labelX = plotX2 - 150;
@@ -41,13 +54,20 @@ class Visualization_Population {
     plotY2 = height - plotY1-30;
     labelY = height - 25;
 
-    image(iMap, 0, 0, width, height);
-    
     maxPop = dPopulation.getMaxPopulation();
-    maxPopRadius = 700 / maxPop;
-    
     sumPop = dPopulation.getSumPopulation();
-    sumPopRadius = 1520 / sumPop ;
+    sumDayPop = dPopulation.getSumDaytimePopulation();
+
+    // Pie Chart
+    coreX = width/2;
+    coreY = height/2+45;
+    coreR = 200;
+    coreRR = 200;
+    coreX2 = height - coreX;
+    coreY2 = height/2+45;
+    coreR2 = 200;
+    tempData = sort_reverse(dPopulation.data);
+    tempData2 = sort_reverse2(dPopulation.data);
     
     pDataMin = 0;
     pDataMax = dPopulation.getMaxPopulation(); 
@@ -66,30 +86,32 @@ class Visualization_Population {
 //====================================================================
 
   void draw(){
-    if(pFlag == 0) drawChart1();
+    if(pFlag == 0) {
+      drawChart1();
+    }
     else 
     if (pFlag == 1){
-      colorMode(RGB);
       drawChart2();
     }
+    sBtns.draw();
   }
 
   // 图表一: 饼图
   void drawChart1() {
-    drawTitle();
+    drawTitle("Chart 1: Pie Graph of Population");
     drawPopulationCookie();
+    // drawPopulationCookie2();
     
   }
 
   // 图表二: 柱状图
   void drawChart2() {
-
     fill(200, 200, 200, 210);
     rectMode(CORNERS);
     rect(plotX1, plotY1, plotX2, plotY2);
 
     drawAxisLabels();
-    drawTitle();
+    drawTitle("Chart 2: Bar Graph of Population");
 
     drawZoneLabels();
     drawPopulationLabels();
@@ -98,16 +120,13 @@ class Visualization_Population {
   }
 
   
-  void drawTitle() {
+  void drawTitle(String title) {
     fill(0);
     textSize(20);
     textAlign(CENTER);
-    String title = dPopulation.getColumnName(0);
+    // String title = dPopulation.getColumnName(0);
     text(title, (plotX1 + plotX2)/2, plotY1 - 10);
   }
-
-  color baseColor = color(102, 175, 106);
-  color upperColor = color(246, 145, 29);
 
 
 //====================================================================
@@ -116,56 +135,104 @@ class Visualization_Population {
 
   void drawPopulationCookie(){
     
-    float tempEnd = -HALF_PI;  
+    textAlign(CENTER);
+    textSize(15);
+    fill(fontColor);
+    text("Population Density", coreX, coreY-coreR-35);
 
-    colorMode(RGB);
-    fill(baseColor);
-    ellipseMode(CENTER);
-    colorMode(HSB, 360, 100, 100);
+    float tempEnd = -HALF_PI;
+    float[] endAngle = new float[dPopRowCount+1];
+    float[] percent = new float[dPopRowCount];
+    endAngle[0] = -HALF_PI;
+
     color[] pieColor = new color[dPopRowCount];
+    for (int i = 0; i < dPopRowCount; i++) {
+      // pieColor[i] = color(i*(256/dPopRowCount), 70-(i%5)*3, 90);
+      pieColor[i] = color(200 + (i%4)*10, 150-(i%5)*3, 120);
+    
+    }
+
+
+    for (int row = 0; row < dPopRowCount; row++) {
+      percent[row] = tempData[row][0]/sumPop;
+      endAngle[row+1] = endAngle[row] + percent[row]*TWO_PI;
+      println("angle["+row+"] = " + endAngle[row]/PI);
+
+      ellipseMode(RADIUS);
+      fill(pieColor[row]);
+      // ellipse(coreX, coreY, coreR, coreR);
+      // arc(coreX, coreY, coreR, coreR, tempEnd, tempEnd + percent * TWO_PI - PI/500, PIE);
+      arc(coreX, coreY, coreR, coreRR, endAngle[row], endAngle[row+1], PIE);
+      
+      // tempEnd += percent * TWO_PI;
+    
+    }
+    
     
     for (int i = 0; i < dPopRowCount; i++) {
-      // pieColor[i] = color(100 + 20*(i%4), 80 + 5*(i%7), 10);
-      // pieColor[i] = color(26+(i%4)*3, 80 + 5*(i%3), 90);
-      pieColor[i] = color(i*(360.0/dPopRowCount), 70-(i%5)*3, 90);
-    
-    
-    }
-
-    int[][] tempData = sort_reverse(dPopulation.data);
-
-    for (int row = 0; row < dPopRowCount; row++) {
-      
-      float percent = tempData[row][0]/sumPop;
-      // println("tempEnd now is: " + tempEnd/PI);
-
-      smooth();
-      fill(pieColor[row]);
-      arc(width/2-250, height/2, 450, 450, tempEnd, tempEnd + percent * TWO_PI - PI/500, PIE);
-      tempEnd += percent * TWO_PI;
-  
-    }
-    colorMode(RGB);
-
-/*
-    for (int row = 0; row < dPopRowCount; row++) {
-      if (dPopulation.isValid(row, 0)) {
+      if (mouseIsInArc(i, endAngle)) {
         
-        float percent = dPopulation.getFloat(row, 0)/sumPop;
-        println("tempEnd now is: " + tempEnd/PI);
-
+        fill(pieColor[i]);
+        arc(coreX, coreY, coreR+30, coreRR+30, endAngle[i], endAngle[i+1], PIE);
         
-        fill(pieColor[row]);
-
-        arc(width/2, height/2, 300, 300, tempEnd, tempEnd + percent * TWO_PI, PIE);
-        tempEnd += percent * TWO_PI;
-    
-
+        fill(222, 50, 80);
+        textSize(13);
+        textAlign(LEFT, BOTTOM);
+        text("Zone Name: "+dPopulation.zoneNames[i]+"\n Density" + (int)dPopulation.getFloat(i, 0), mouseX, mouseY);
       }
     }
-    
-*/
   }
+
+
+  // 白天的数据
+  void drawPopulationCookie2(){
+    
+    float tempEnd = -HALF_PI;
+    float[] endAngle = new float[dPopRowCount+1];
+    float[] percent = new float[dPopRowCount];
+    endAngle[0] = -HALF_PI;
+
+    color[] pieColor = new color[dPopRowCount];
+    for (int i = 0; i < dPopRowCount; i++) {
+      // pieColor[i] = color(i*(256/dPopRowCount), 70-(i%5)*3, 90);
+      pieColor[i] = color(120, 150-(i%5)*3, 200 + (i%4)*10);
+    
+    }
+
+
+    for (int row = 0; row < dPopRowCount; row++) {
+      percent[row] = tempData2[row][1]/sumDayPop;
+      endAngle[row+1] = endAngle[row] + percent[row]*TWO_PI;
+      println("angle["+row+"] = " + endAngle[row]/PI);
+
+      ellipseMode(RADIUS);
+      fill(pieColor[row]);
+      // ellipse(coreX, coreY, coreR, coreR);
+      // arc(coreX, coreY, coreR, coreR, tempEnd, tempEnd + percent * TWO_PI - PI/500, PIE);
+      arc(coreX2, coreY2, coreR2, coreR2, endAngle[row], endAngle[row+1], PIE);
+      
+      // tempEnd += percent * TWO_PI;
+    
+    }
+    
+    
+    for (int i = 0; i < dPopRowCount; i++) {
+      if (mouseIsInArc(i, endAngle)) {
+        
+        fill(pieColor[i]);
+        arc(coreX2, coreY2, coreR2+30, coreR2+30, endAngle[i], endAngle[i+1], PIE);
+        
+        fill(222, 50, 80);
+        textSize(13);
+        textAlign(LEFT, BOTTOM);
+        text("Zone Name: "+dPopulation.zoneNames[i]+"\n Density" + (int)dPopulation.getFloat(i, 0), mouseX, mouseY);
+      }
+    }
+  }
+
+
+
+    
 
 
 //====================================================================
@@ -174,7 +241,6 @@ class Visualization_Population {
 
   // 绘制坐标轴
   void drawAxisLabels() {
-    colorMode(RGB, 255);
     fill(0);
     textSize(15);
     textLeading(15);
@@ -289,16 +355,17 @@ class Visualization_Population {
   
   // 绘制白天的数据（基于总数据的绘制基础上）
   void drawDayDataArea(float x, int tempRow) {
-    float value = dPopulation.getFloat(tempRow, 1);
+    int[][] sortedData2 = sort_reverse2(dPopulation.data);
+
+    float value = sortedData2[tempRow][1];
     float tempY = map(value, pDataMin, pDataMax, plotY2, plotY1+70);
-    int tempValue = parseInt(value);
     
     fill(upperColor);
     rect(x-12, plotY2, x+32, tempY);
     textAlign(CENTER, BOTTOM);
     textSize(12);
     fill(240);
-    text(tempValue, x+10, tempY+20);
+    text((int)value, x+10, tempY+20);
     
     
   }
@@ -336,6 +403,10 @@ class Visualization_Population {
     int temp = 0;
     int[][] b = new int[dPopRowCount][dPopColumnCount];
     b = a;
+
+    String[] myZoneNames = new String[dPopRowCount];
+    myZoneNames = dPopulation.zoneNames;
+    String tempString = " ";
     
     for(int i = dPopRowCount-1; i>0; --i) {
       for(int j = 0; j < i; ++j) {
@@ -343,11 +414,98 @@ class Visualization_Population {
           temp      = b[j][0];
           b[j][0]   = b[j+1][0];
           b[j+1][0] = temp;
+          
+          tempString      = myZoneNames[j];
+          myZoneNames[j]   = myZoneNames[j+1];
+          myZoneNames[j+1] = tempString;
+          
         }
       }
     }
     
     return b;
+  }
+
+  // 排序算法 - 白天数据的从大到小
+  public int[][] sort_reverse2(int[][] a)  {
+    int temp = 0;
+    int[][] b = new int[dPopRowCount][dPopColumnCount];
+    b = a;
+    
+    for(int i = dPopRowCount-1; i>0; --i) {
+      for(int j = 0; j < i; ++j) {
+        if(b[j+1][1] > b[j][1]) {
+          temp      = b[j][1];
+          b[j][1]   = b[j+1][1];
+          b[j+1][1] = temp;
+          
+        }
+      }
+    }
+    
+    return b;
+  }
+  
+
+
+  // 检测是否在扇形内
+  private boolean mouseIsInArc(int i, float[] endAngle){
+    mousePos = new PVector(mouseX, mouseY);
+    PVector corePos = new PVector(coreX, coreY);
+    PVector beginPoint = new PVector(0, coreR);
+    PVector tempV;
+    tempV = new PVector(mouseX-coreX, mouseY-coreY);
+    
+    float deltaAngle;
+    
+    if (dist(mousePos.x, mousePos.y, corePos.x, corePos.y) <= coreR){
+      
+      if (mouseX > coreX){
+        deltaAngle = PI - PVector.angleBetween(tempV, beginPoint);
+        println("angle = " + deltaAngle/PI);
+        
+      } else {
+        deltaAngle = PI + PVector.angleBetween(tempV, beginPoint);
+        println("angle = " + deltaAngle/PI);
+      }
+      
+      if (deltaAngle > endAngle[i]+HALF_PI && deltaAngle < endAngle[i+1]+HALF_PI){
+        //println("angle: " + PVector.angleBetween(tempV, beginPoint)/PI);
+        
+        return true;
+
+      } else return false;
+    } else return false;
+  }
+
+  // 检测是否在扇形内2
+  private boolean mouseIsInArc2(int i, float[] endAngle){
+    mousePos = new PVector(mouseX, mouseY);
+    PVector corePos = new PVector(coreX2, coreY2);
+    PVector beginPoint = new PVector(0, coreR2);
+    PVector tempV;
+    tempV = new PVector(mouseX-coreX2, mouseY-coreY2);
+    
+    float deltaAngle;
+    
+    if (dist(mousePos.x, mousePos.y, corePos.x, corePos.y) <= coreR){
+      
+      if (mouseX > coreX2){
+        deltaAngle = PI - PVector.angleBetween(tempV, beginPoint);
+        println("angle = " + deltaAngle/PI);
+        
+      } else {
+        deltaAngle = PI + PVector.angleBetween(tempV, beginPoint);
+        println("angle = " + deltaAngle/PI);
+      }
+      
+      if (deltaAngle > endAngle[i]+HALF_PI && deltaAngle < endAngle[i+1]+HALF_PI){
+        //println("angle: " + PVector.angleBetween(tempV, beginPoint)/PI);
+        
+        return true;
+
+      } else return false;
+    } else return false;
   }
 
 
