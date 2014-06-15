@@ -1,0 +1,622 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"drawCh",
+				"drawChart1"
+			],
+			[
+				"text",
+				"text"
+			],
+			[
+				"pop",
+				"popInterval"
+			],
+			[
+				"pl",
+				"plotY1"
+			],
+			[
+				"pD",
+				"pDataMax"
+			],
+			[
+				"popI",
+				"popIntervalMinor"
+			],
+			[
+				"pDa",
+				"pDataMax"
+			],
+			[
+				"draw",
+				"drawX"
+			],
+			[
+				"plot",
+				"plotX1"
+			],
+			[
+				"lab",
+				"labelX"
+			],
+			[
+				"G",
+				"gameResult"
+			],
+			[
+				"Ma",
+				"MapManager"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"pr",
+				"private"
+			],
+			[
+				"fa",
+				"fadeTo"
+			],
+			[
+				"mo",
+				"mouseOver"
+			],
+			[
+				"adop",
+				"adop"
+			],
+			[
+				"su",
+				"submit"
+			],
+			[
+				"IDM",
+				"IDM_OPT2"
+			],
+			[
+				"p",
+				"p"
+			],
+			[
+				"dat",
+				"Date"
+			],
+			[
+				"pub",
+				"Publication"
+			],
+			[
+				"joke",
+				"joke_evaluation"
+			],
+			[
+				"my",
+				"my_hair"
+			],
+			[
+				"cars",
+				"cars_not_driven"
+			],
+			[
+				"SA",
+				"SavingsAccount"
+			],
+			[
+				"SavingAccount",
+				"SavingsAccount"
+			],
+			[
+				"en",
+				"endl"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "sketch_MicroblogVisualization/Visualization_Population.pde",
+			"settings":
+			{
+				"buffer_size": 7330,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sketch_MicroblogVisualization/PopulationTable.pde",
+			"settings":
+			{
+				"buffer_size": 6407,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/F/编程/程序文件/Processing/sketch_14_03_08_Alien_3_Analyze/sketch_14_03_08_Alien_3_Analyze.pde",
+			"settings":
+			{
+				"buffer_size": 11581,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/F/processing-2.1/modes/java/examples/Books/Visualizing Data/ch04-milkteacoffee/step_16_tabs_images/step_16_tabs_images.pde",
+			"settings":
+			{
+				"buffer_size": 5560,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++.sublime-build",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Emmet: Decrement Number by 1"
+			],
+			[
+				"package inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/PopulationTable.pde",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization.pde",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/Visualization_Population.pde",
+		"/F/编程/程序文件/Processing/sketch_14_03_27_learnTable/FloatTable（带中文注释）.java",
+		"/F/processing-2.1/modes/java/examples/Books/Visualizing Data/ch04-milkteacoffee/figure_03_labels/figure_03_labels.pde",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/Default/Preferences.sublime-settings",
+		"/F/编程/程序文件/Processing/sketch_14_03_08_Alien_3_Analyze/sketch_14_03_08_Alien_3_Analyze.pde",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/User/Plain text.sublime-settings",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/User/Java.sublime-settings",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Pristine Packages/Java.sublime-package",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Pristine Packages/Java.sublime-package",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/User/C++.sublime-settings",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization/DataTable.pde",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization/DateData.pde",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization/TimeData.pde",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization/PopulationTable.pde",
+		"/F/processing-2.1/modes/java/examples/Books/Visualizing Data/ch04-milkteacoffee/figure_14_bar_chart/figure_14_bar_chart.pde",
+		"/F/processing-2.1/modes/java/examples/Books/Visualizing Data/ch04-milkteacoffee/figure_15_tabs/figure_15_tabs.pde",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization/dateData.pde",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization/timeData.pde",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/Data/Packages/ConvertToUTF8/ConvertToUTF8.sublime-settings",
+		"/F/编程/程序文件/Processing/sketch_MicroblogVisualization/MicroblogVisualization/sketch_MicroblogVisualization/sketch_MicroblogVisualization.pde",
+		"/D/可视化数据/可视化课程工程数据集/IEEE VAST Challenge 2011/MC_1_Materials_3-30-2011/Population.csv",
+		"/F/编程/程序文件/Processing/sketch_14_04_03_learnTable3_draw/FloatTable.java",
+		"/F/编程/程序文件/Processing/sketch_14_04_03_learnTable3_draw/sketch_14_04_03_learnTable3_draw.pde",
+		"/F/编程/程序文件/Processing/sketch_14_04_03_learnTable3_draw/FloatTable.pde",
+		"/F/编程/程序文件/Processing/sketch_14_04_03_learnTable3_draw/DataTable.pde",
+		"/E/Eclipse/Experiment/Tankwar2014/src/MapManager.java",
+		"/E/Eclipse/Experiment/Tank2014/src/MapManager.java",
+		"/F/编程/程序文件/JAVA/大二下期末作业/参考/播放midi音乐.java",
+		"/E/Eclipse/Experiment/HitMouse3/src/Game.java",
+		"/F/编程/程序文件/JAVA/Lesson/第五章程序/ManyCatch/src/ceshi2.java",
+		"/E/Eclipse/Experiment/HitMouse3/src/highscore.java",
+		"/E/Eclipse/Experiment/HitMouse3/src/Menu.java",
+		"/F/Downloads/HitMouse3/src/Game.java",
+		"/F/编程/程序文件/JAVA/大二下期末作业/java打地鼠.java",
+		"/F/编程/程序文件/OpenGL/lesson_1 Frame.c",
+		"/E/OpenFrameworks/apps/myApps/customEventExample/src/ofApp.cpp",
+		"/E/OpenFrameworks/apps/myApps/customEventExample/src/ofApp.h",
+		"/E/Apache Tomcat/WebDesign/Morks_func1.jsp",
+		"/D/Moy/Centro/Texts/Self/Documents/GitHub/HitIt/Study_HitMouse.java",
+		"/E/Apache Tomcat/WebDesign/Morks_base.jsp",
+		"/E/Apache Tomcat/WebDesign/Morks_func3.jsp",
+		"/E/Apache Tomcat/WebDesign/Morks_func2_showChats.jsp",
+		"/E/Apache Tomcat/WebDesign/Morks_func2_inputChat.jsp",
+		"/F/编程/外部资料/2.当下/HTML资料/锋利的jQuery/实例下载/02第二章/第二章例子/2-3：3个JavaScript例子/2-3-1.html",
+		"/E/Apache Tomcat/WebDesign/dist/css/bootstrap.css",
+		"/F/Downloads/文档/学校/网站建设大作业/Morks/dist/css/bootstrap.css",
+		"/F/编程/程序文件/JS/11月 期末作业/1030512203 胡磊/Star Gate.html",
+		"/F/编程/程序文件/Sublime Text/JavaScript/JS课本扫荡 11_13 -  第八章 表单与表单元素 button对象的应用.html",
+		"/E/Apache Tomcat/WebDesign/Morks_func3_inputRadius.jsp",
+		"/E/Apache Tomcat/WebDesign/inputRadius.jsp",
+		"/E/Apache Tomcat/WebDesign/Morks_func3_drawCircle.jsp",
+		"/F/Downloads/文档/学校/网站建设大作业/Morks/index.html",
+		"/E/Apache Tomcat/WebDesign/biao.jsp",
+		"/F/Downloads/文档/学校/网站建设大作业/bootstrap-3.0.3/examples/carousel/index.html",
+		"/E/Apache Tomcat/WebDesign/inputAndShow.jsp",
+		"/F/Downloads/文档/学校/网站建设大作业/bootstrap-3.0.3/examples/jumbotron/index.html",
+		"/E/Apache Tomcat/WebDesign/WEB-INF/classes/bean/data/MessBoard.java",
+		"/E/Apache Tomcat/WebDesign/WEB-INF/classes/bean/data/PC.java",
+		"/E/Apache Tomcat/WebDesign/inputChat.jsp",
+		"/F/Downloads/文档/学校/网站建设大作业/Morks/dist/holder.js",
+		"/F/编程/程序文件/JAVA/大二下期末作业/HitMouse",
+		"/F/编程/java打地鼠.txt",
+		"/E/OpenFrameworks/apps/myApps/customEventExample/src/ofApp_st.cpp",
+		"/D/Moy/Centro/Texts/Self/学习/11_28 jQuery - 入门认识 [1].htm",
+		"/D/Moy/Centro/Texts/Self/学习/11_28 jQuery - 试着用用看吧 [2].htm",
+		"/F/编程/外部资料/2.当下/HTML资料/锋利的jQuery/实例下载/01第一章/第一章例子/1-4导航栏/1-5-1初始化.html",
+		"/F/编程/程序文件/JS/11月 期末作业/参考/js/js大作业/基本题/用户登陆页面/程序/用户登录.html",
+		"/F/编程/程序文件/JS/11月 期末作业/1030512203 胡磊/Login.html",
+		"/F/HelloWorld.java",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/10_05 Test.c",
+		"/F/2_18_HelloWorld.java",
+		"/D/Moy/Centro/Texts/Self/学习/入门认识",
+		"/D/Moy/Centro/Texts/Self/学习/11_28",
+		"/D/Moy/Centro/Texts/Self/学习/jQuery",
+		"/D/Moy/Centro/Texts/Self/学习/-",
+		"/D/Moy/Centro/Texts/Self/学习/[1].htm",
+		"/F/编程/程序文件/JS/11月 HCI_TTS/参考/SpeakTTS_changed.html",
+		"/F/编程/程序文件/JS/11月 HCI_TTS/11_28 TTS (change the model).html",
+		"/F/编程/程序文件/JS/11月 HCI_TTS/11_28 TTS.html",
+		"/F/编程/程序文件/JS/11月 HCI_TTS/参考/x.html",
+		"/F/编程/程序文件/JS/11月 期末作业/1030512203 胡磊/Album.html",
+		"/F/编程/程序文件/JS/11月 期末作业/1030512203 胡磊/Index.html",
+		"/F/编程/程序文件/JS/11月 HCI_TTS/11_21 TTS.html",
+		"/H/HCI/LAB 3 simple tts/Website by Moy.html",
+		"/F/编程/程序文件/Sublime Text/HTML/10_16 W3C JS自学1.html",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_11_19  跟我一起学win32编程 - 11 - 按钮.cpp",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_11_19  Windows大作业 - 截图 原版备份.cpp",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_11_12  connect - 自然画笔参考.cpp",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_11_10  跟我一起学win32编程 - 4 - 创建菜单.cpp",
+		"/F/编程/程序文件/JS/11月 期末作业/参考/作业-登录界面 2.htm",
+		"/F/编程/程序文件/JS/11月 期末作业/1030512203 胡磊.html",
+		"/F/编程/程序文件/JS/11月 期末作业/Album.html",
+		"/F/编程/程序文件/JS/11月 期末作业/参考/作业-相册页面.htm",
+		"/F/编程/程序文件/JS/11月 期末作业/参考_成品.html",
+		"/F/编程/程序文件/JS/11月 期末作业/参考/js/作业-登录界面.htm",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_11_12  跟我一起学win32编程 - 5 - 绘图.cpp",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_11_09  跟我一起学win32编程 - 2 - 完整的開發流程.cpp",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/10_04 GDI_Bezier Curve.c",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/10_04 Bezier_backup.c",
+		"/F/编程/程序文件/Sublime Text/JavaScript/JS课本扫荡 11_13.html",
+		"/F/编程/程序文件/Sublime Text/JavaScript/JS课本扫荡 11_8.html",
+		"/F/编程/程序文件/Sublime Text/JavaScript/JS课本扫荡 11_6.html",
+		"/F/编程/程序文件/Visual Studio/Windows编程 源码/Chap05/RandRect/RandRect.c",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_11_10  跟我一起学win32编程 - 4 - 1 - 用函数创建菜单.cpp",
+		"/F/编程/程序文件/Visual Studio/Windows编程 源码/Chap01/HelloMsg/HelloMsg.c",
+		"/F/编程/程序文件/Visual Studio/Windows编程 源码/Chap05/Bezier/Bezier.c",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_11_09  跟我一起学win32编程 - 1 - 指針.cpp",
+		"/F/编程/程序文件/Sublime Text/HTML/JS课本扫荡 11_8.html",
+		"/F/编程/程序文件/HTML/10_23 Java learning.html",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/11_02 Key&Mouse.cpp",
+		"/F/Unity project/Assets/Scripts/PlayerComtroller.cs",
+		"/F/Unity project/Assets/Scripts/CameraController.cs",
+		"/F/Unity project/Assets/PlayerComtroller.cs",
+		"/F/Unity project/Assets/CameraController.cs",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/10_04 AltWind_backup.c",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/10_02 Windows.c",
+		"/F/编程/程序文件/Sublime Text/Windows Programing/13_10_01 SysMets.c",
+		"/F/编程/程序文件/Sublime Text/HTML/09_28_0 [XHTML]第一次应用[web编程入门经典].xhtml",
+		"/F/编程/程序文件/Sublime Text/HTML/09_27_2 document对象的应用.html",
+		"/F/编程/程序文件/JS/2_event.html",
+		"/F/编程/程序文件/Sublime Text/HTML/10_04 GBin - 超漂亮的前端网站.html",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/sublime_text_cracked.exe",
+		"/F/Downloads/Soft/Protable/其他/文本/Sublime Text 2.0.1 x64/sublime_text - Copy.exe",
+		"/E/Desktop_Others/NCRE2/MY FILE/Write.cpp",
+		"/F/编程/程序文件/Sublime Text/HTML/09_27_0.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"drawAxisLabels",
+			"drawDataPoints",
+			"syntax",
+			"getFloat",
+			"rowNames",
+			"encoding",
+			"infoBG",
+			"iInfoBG",
+			"p1",
+			"index",
+			"time",
+			"p1",
+			"AudioStream",
+			"bg",
+			"baozha",
+			"image",
+			"lb1",
+			"code",
+			"button",
+			"container",
+			"drawCircle",
+			"hr",
+			"carousel-caption",
+			"container",
+			"oldTime",
+			"ansi",
+			"gb",
+			"idTextBox",
+			"SpeakText()",
+			"button",
+			"lip",
+			"idTextBox",
+			"test",
+			"voicelists",
+			"flag",
+			"changeBg",
+			"test",
+			"teli",
+			"WS",
+			"umsg",
+			"rect",
+			"ps",
+			"d.",
+			"3342",
+			"szCmdLine",
+			"\n数据处理的最小单位是数据项\n\n数据处理的最小单位是数据项\ncout<<year<<",
+			"font",
+			"savingsa",
+			"savinga"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"infoBG",
+			"i",
+			"dieImage",
+			"enmImage",
+			"	HWND		hwnd;\n	MSG			msg;	\n	WNDCLASS wc;",
+			"doc."
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "sketch_MicroblogVisualization/Visualization_Population.pde",
+					"settings":
+					{
+						"buffer_size": 7330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sketch_MicroblogVisualization/PopulationTable.pde",
+					"settings":
+					{
+						"buffer_size": 6407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "/F/编程/程序文件/Processing/sketch_14_03_08_Alien_3_Analyze/sketch_14_03_08_Alien_3_Analyze.pde",
+					"settings":
+					{
+						"buffer_size": 11581,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/F/processing-2.1/modes/java/examples/Books/Visualizing Data/ch04-milkteacoffee/step_16_tabs_images/step_16_tabs_images.pde",
+					"settings":
+					{
+						"buffer_size": 5560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 39.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.526019063551,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true
+}
